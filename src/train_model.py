@@ -1,7 +1,7 @@
 import pandas as pd
 import pickle
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score
 from sklearn.model_selection import train_test_split
 
 def train_and_evaluate_model():
@@ -31,6 +31,8 @@ def train_and_evaluate_model():
     y_valiation_predictions = model.predict(X_validation)
     print "  - Positive Fraction in Data: " + str(float(sum(labels)) / len(labels))
     print "  - Validation Accuracy: " + str(accuracy_score(y_validation, y_valiation_predictions))
+    print "  - Validation Precision: " + str(precision_score(y_validation, y_valiation_predictions))
+    print "  - Validation Recall: " + str(recall_score(y_validation, y_valiation_predictions))
 
     print 'Saving Modeling File'
     with open('models/load_default_prediction_model.p', 'wb') as model_file:
