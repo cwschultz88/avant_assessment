@@ -7,5 +7,5 @@ Written with Python 2 on Mac OS. This code should work in a linux environment as
 Assumes all scripts were called from the root of the repo. For example:
 
 ```
-  python src\build_model_features.py
+  python src\build_model_features_labels.py
 ```
