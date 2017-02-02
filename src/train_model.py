@@ -1,6 +1,6 @@
 import pandas as pd
 import pickle
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 
@@ -23,7 +23,7 @@ def train_and_evaluate_model():
     X_train, X_validation, y_train, y_validation = train_test_split(features, labels, test_size=0.2)
 
     print 'Training Model'
-    model = RandomForestClassifier()  # default parameters for now just to save space / serve as proof of concept
+    model = GradientBoostingClassifier()  # default parameters for now just to save space / serve as proof of concept
     model.fit(X_train, y_train)
     print "Training Complete"
 
